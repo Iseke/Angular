@@ -1,0 +1,14 @@
+<div class="main">
+  <mat-progress-bar [value]="globalTime" [bufferValue]="0" mode="buffer"></mat-progress-bar>
+  <mat-horizontal-stepper class="content" (selectionChange)="setIndex($event)">
+    <mat-step *ngFor="let question of questions; let index = index; let last = last;" [editable]="!!question.time">
+      <ng-template matStepLabel>{{ index+1 }}</ng-template>
+      <app-question [type]="question.type" [childs]="question.answers" [i]="index" [time]="question.time" [title]="question.quest" [value]="question.answer" (changeValue)="changeValue($event)"> </app-question>
+      <button mat-button matStepperNext *ngIf="question.answer === -1 && question.time !== 0">Пропустить</button>
+      <button mat-button matStepperNext class="active" *ngIf="question.answer !== -1 && question.time !== 0" (click)="removeTime(index)">Ответить</button>
+    </mat-step>
+  </mat-horizontal-stepper>
+  <div class="flex row content jc-center" *ngIf="end">
+    <a routerLink="/result">Закончить</a>
+  </div>
+</div>

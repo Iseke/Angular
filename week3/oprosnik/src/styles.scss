@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.main{
+  background-color: #303030;
+  color: white;
+  padding: 2rem 1rem;
+  min-height: calc(100vh - 4rem);
+}
+.flex{
+  display: flex;
+}
+.row{
+  flex-direction: row;
+}
+.col{
+  flex-direction: column;
+}
+.mat-checkbox-frame, .mat-checkbox-background{
+  border-radius: 50% !important;
+}
+.content{
+  width: calc(100% - 2rem);
+  max-width: calc(1024px + 2rem);
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.jc-center{
+  justify-content: center;
+}
+.ai-center{
+  align-items: center;
+}

@@ -1,0 +1,9 @@
+<div class="main">
+  <div class="content flex col">
+    <div class="flex col item" *ngFor="let question of questions; let i = index">
+      <h3>{{i+1 + ')'}} {{question.quest}}</h3>
+      <span [ngClass]="{'error': checkAnswer(i ,j) === 1, 'success': checkAnswer(i ,j) === 2}" *ngFor="let answer of question.answers; let j = index">{{j+1 + ')'}} {{answer}}</span>
+    </div>
+      <a routerLink="">Закончить</a>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+button{
+  cursor: pointer;
+  border: 1px solid #7b1fa2;
+  color: #7b1fa2;
+  padding: 1rem;
+  &.active{
+    background-color: #7b1fa2;
+    color: white;
+    font-weight: 600;
+    border-color: #7b1fa2;
+  }
+}
+.content{
+  margin-top: 12px;
+}
+a{
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #7b1fa2;
+  color:white;
+  width: 400px;
+  padding: 1rem;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  &:hover{
+    background-color: #7b1fa2;
+    color: white;
+    font-weight: 600;
+    border-color: #7b1fa2;
+    box-shadow: 0px 1px 10px rgba(255,255,255,0.5);
+  }
+}

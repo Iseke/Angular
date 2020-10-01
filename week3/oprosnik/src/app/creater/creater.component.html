@@ -1,0 +1,25 @@
+<div class="main flex col ai-center">
+  <mat-vertical-stepper class="content">
+    <mat-step *ngFor="let question of questions; let index = index; let last = last;">
+      <ng-template matStepLabel>{{ question.quest }}</ng-template>
+
+      <form>
+        <mat-form-field class="flex col">
+          <mat-label>Вопрос</mat-label>
+          <input matInput placeholder="Введите вопрос" [value]="question.quest" (input)="changeQuest($event, index, 'quest')" required>
+          <mat-slide-toggle (click)="changeType(index)">Несколько ответов</mat-slide-toggle>
+          <mat-label>Ответы</mat-label>
+          <div *ngFor="let answer of question.answers; let i = index" >
+            <mat-radio-button (click)="changeResult($event,index, i)" [checked]="results[index] === i" [value]="i" *ngIf="!question.type"></mat-radio-button>
+            <mat-checkbox (click)="changeResult($event,index, i)" [checked]="results[index].indexOf(i) !== -1" [value]="i" *ngIf="!!question.type"></mat-checkbox>
+            <input matInput placeholder="Введите ответ на вопрос" [value]="answer.value" (input)="changeQuest($event, index, 'answers', i)" required>
+          </div>
+
+        </mat-form-field>
+      </form>
+
+    </mat-step>
+  </mat-vertical-stepper>
+  <button (click)="addQuestion()">Добавить вопрос</button>
+  <button (click)="saveTest()">Сохранить</button>
+</div>

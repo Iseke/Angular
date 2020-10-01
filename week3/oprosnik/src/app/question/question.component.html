@@ -1,0 +1,18 @@
+<div class="flex col">
+  <div class="flex row">
+    <mat-progress-spinner [value]="time" *ngIf="!!time"></mat-progress-spinner>
+    <h3>{{title}}</h3>
+  </div>
+  <mat-radio-group class="flex col" *ngIf="!type">
+    <label (click)="onClick($event, inder)" *ngFor="let child of childs; let inder = index">
+      <mat-radio-button [value]="inder" [disabled]="!time" [checked]="value === inder"></mat-radio-button>
+      <span>{{child}}</span>
+    </label>
+  </mat-radio-group>
+  <div class="flex col" *ngIf="!!type">
+    <label (click)="onClick($event, inder)" *ngFor="let child of childs; let inder = index">
+      <mat-checkbox [value]="inder" [disabled]="!time" [checked]="value.indexOf(inder) !== -1"></mat-checkbox>
+      <span>{{child}}</span>
+    </label>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+mat-progress-spinner {
+  transform: scale(-1, 1);
+}
+label{
+  margin-bottom: 12px;
+  cursor: pointer;
+  &:hover{
+    color: white;
+  }
+}
+mat-checkbox{
+  margin-right: 6px;
+}
